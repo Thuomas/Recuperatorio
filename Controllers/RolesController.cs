@@ -8,7 +8,7 @@ using SegundoParcial.Controllers;
 
 namespace SegundoParcial.Controllers;
 
-
+[Authorize]
 public class RolesController : Controller
 {
     private readonly ILogger<HomeController> _logger;

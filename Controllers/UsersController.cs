@@ -9,7 +9,7 @@ using SegundoParcial.Controllers;
 
 namespace SegundoParcial.Controllers;
 
-
+[Authorize]
 public class UsersController : Controller
 {
    

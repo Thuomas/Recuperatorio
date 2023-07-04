@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ using SegundoParcial.Services;
 using SegundoParcial.ViewModels;
 
 namespace SegundoParcial.Controllers;
-
+[Authorize]
     public class DepositoController : Controller
     {
         private IAreaService _areaService;
@@ -57,6 +58,7 @@ namespace SegundoParcial.Controllers;
         }
 
         // GET: Deposito/Create
+        [Authorize(Roles = "Adm")]
         public IActionResult Create()
         {
             var areaList = _areaService.GetAll();
@@ -138,6 +140,7 @@ namespace SegundoParcial.Controllers;
         }
 
         // GET: Deposito/Delete/5
+        [Authorize(Roles = "Adm")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
