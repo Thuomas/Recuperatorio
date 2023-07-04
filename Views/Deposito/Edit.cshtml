@@ -1,0 +1,72 @@
+@using SegundoParcial.ViewModels;
+@model DepositoCreateViewModel;
+
+@{
+    ViewData["Title"] = "Edit";
+    SelectList areaList = (SelectList)ViewData["Areas"];
+}
+
+<h1>Edit</h1>
+
+<h4>Deposito</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <br>
+            <span>
+                Areas disponibles
+            </span>
+            <br>
+            <div>
+                <select class="" multiple asp-for="AreaIds" id="Areas" asp-items="areaList" placeholder="select members"
+                    class="form-control w-50 dropdown">
+                </select>
+            </div>
+            @* <div class="form-group">
+            <label asp-for="Areas" class="control-label"></label>
+            <select asp-for="Areas" class="form-control">
+            @foreach (var area in Model.Areas)
+            {
+            <option value="@area.Id">@area.Nombre</option>
+            }
+            </select>
+            <span asp-validation-for="Areas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="AreasSeleccionadas" class="control-label">Areas</label>
+            @foreach (var area in Model.Areas)
+            {
+            <div>
+            <input type="checkbox" name="AreasSeleccionadas" value="@area.Id" id="checkbox-@area.Id"
+            @(Model.AreasSeleccionadas != null && Model.AreasSeleccionadas.Contains(area.Id) ? "checked" :
+            "")>
+            <label for="checkbox-@area.Id">@area.Nombre</label>
+            </div>
+            }
+            <span asp-validation-for="AreasSeleccionadas" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

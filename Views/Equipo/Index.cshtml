@@ -1,0 +1,71 @@
+@using SegundoParcial.ViewModels;
+@model EquipoViewModel;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="row">
+    <form method="get" asp-action="Index" asp-controller="Equipo">
+        <div class="col-6 form-group">
+            <input class="form-control" asp-for="NameFilter" >
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit"> Buscar </button>
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositoId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Equipos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaProd)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deposito.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
