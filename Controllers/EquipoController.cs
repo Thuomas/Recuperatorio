@@ -10,8 +10,8 @@ using SegundoParcial.Models;
 using SegundoParcial.Services;
 using SegundoParcial.ViewModels;
 
-namespace SegundoParcial.Controllers
-{
+namespace SegundoParcial.Controllers;
+
     public class EquipoController : Controller
     {
         private IEquipoService _equipoService;
@@ -187,4 +187,4 @@ namespace SegundoParcial.Controllers
           return _equipoService.GetById(id) != null;
         }
     }
-}
+

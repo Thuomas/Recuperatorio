@@ -10,8 +10,8 @@ using SegundoParcial.Models;
 using SegundoParcial.Services;
 using SegundoParcial.ViewModels;
 
-namespace SegundoParcial.Controllers
-{
+namespace SegundoParcial.Controllers;
+
     public class AreaController : Controller
     {
         private IAreaService _areaService;
@@ -172,4 +172,4 @@ namespace SegundoParcial.Controllers
             return _areaService.GetById(id) != null;
         }
     }
-}
+
