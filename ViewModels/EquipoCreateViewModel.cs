@@ -11,6 +11,7 @@ public class EquipoCreateViewModel
     public DateOnly FechaProd { get; set; }
 
     public string? Comentario { get; set; }
+    
     [Display(Name = "Deposito")]
     public int DepositoId { get; set; }
 

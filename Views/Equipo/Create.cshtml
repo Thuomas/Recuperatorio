@@ -34,10 +34,6 @@
                 <input asp-for="Comentario" class="form-control" />
                 <span asp-validation-for="Comentario" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="DepositoId" class="control-label"></label>
-                <select asp-for="DepositoId" class ="form-control" asp-items="ViewBag.DepositoId"></select>
-            </div> *@
             <div>
                 <label asp-for="DepositoId" class="control-label"></label>
             <select class="" asp-for="DepositoId" id="Depositos" asp-items="depositoList" placeholder="select members" class="form-control w-50 dropdown">

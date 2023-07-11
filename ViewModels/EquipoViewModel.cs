@@ -17,6 +17,7 @@ public class EquipoViewModel
     public DateOnly FechaVenta { get; set; }
 
     public string? Comentario { get; set; }
+    
     [Display (Name = "Deposito")]
     public int DepositoId { get; set; }
     public virtual Deposito Deposito { get; set; }
