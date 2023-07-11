@@ -40,6 +40,14 @@
             {
                 <span> Garantia vencida el @Model.FechaVenta.AddDays(540) </span>
             }
+            @if (Model.EstaEnGarantia)
+            {
+               <span> Se lo puede ingresar a Servicio Tecnico  </span> 
+            }
+            else
+            {
+                <h3> No admisible para Servicio Tecnico, repuestos descontinuados </h3>
+            }
         }
 
     </dl>

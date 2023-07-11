@@ -13,5 +13,7 @@ public class EquipoGarantiaViewModel
     public DateOnly FechaVenta { get; set; }
 
     public bool EstaEnGarantia { get; set; }
+    public bool ServicioTecnico { get; set; }
+
 
 }

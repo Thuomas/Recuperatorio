@@ -213,6 +213,10 @@ public class EquipoController : Controller
         {
             model.EstaEnGarantia = true;
         }
+        if(equipo.FechaVenta.AddYears(10) > fechActual )
+        {
+            model.ServicioTecnico = true;
+        }
         return View(model);
     }
 
