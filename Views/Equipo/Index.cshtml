@@ -50,9 +50,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FechaProd)
             </td>
-            
             <td>
-                @Html.DisplayFor(modelItem => item.FechaVenta)
+            @if (item.FechaVenta != DateOnly.MinValue )
+            {
+                
+                @Html.DisplayFor(modelItem => item.FechaVenta)                
+            }
+            
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comentario)
@@ -63,7 +67,8 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-action="Garantia" asp-route-id="@item.Id">Garantia</a> |
             </td>
         </tr>
 }

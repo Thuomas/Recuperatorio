@@ -1,0 +1,49 @@
+@using SegundoParcial.ViewModels;
+@model EquipoGarantiaViewModel;
+
+@{
+    ViewData["Title"] = "Garantia";
+}
+
+<h1>Garantia</h1>
+
+<div>
+    <h4>Equipo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumSerie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumSerie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaProd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaProd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaVenta)
+        </dt>
+         @if (Model.FechaVenta != DateOnly.MinValue)
+        {
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaVenta)
+        </dd>
+       
+            @if (Model.EstaEnGarantia)
+            {
+                <span> Garantia valida hasta el @Model.FechaVenta.AddDays(540) </span>
+            }
+            else
+            {
+                <span> Garantia vencida el @Model.FechaVenta.AddDays(540) </span>
+            }
+        }
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

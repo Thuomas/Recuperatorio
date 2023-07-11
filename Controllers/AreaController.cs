@@ -131,7 +131,7 @@ namespace SegundoParcial.Controllers;
                 var depositos = _depositoService.GetAll().Where(x => areaView.DepositoIds.Contains(x.Id)).ToList();
                 var areaNueva = _areaService.GetById(areaView.Id);
                 areaNueva.Nombre = areaView.Nombre;
-                areaNueva.Depositos = depositos; //resolver que no tiene depositos
+                areaNueva.Depositos = depositos; 
                 _areaService.Update(areaNueva);
             }
             return RedirectToAction(nameof(Index));
